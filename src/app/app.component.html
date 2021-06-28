@@ -1,0 +1,29 @@
+<h1 class="d-flex justify-content-center align-items-center mt-2">
+  <img
+    src="{{ countryData.countryInfo.flag }}"
+    alt="India"
+    width="45"
+    class="mr-1"
+    *ngIf="countryData"
+  />
+  India Covid Info
+</h1>
+
+<app-date-range-selector
+  [dates]="dates"
+  (dateRangeSelect)="onDateRangeSelect($event)"
+></app-date-range-selector>
+
+<app-country-data [data]="countryData" *ngIf="countryData"></app-country-data>
+
+<div *ngIf="historyLoading && !filteredHistory.length">
+  Loading history data...
+</div>
+<app-history-chart
+  [data]="filteredHistory"
+  *ngIf="filteredHistory.length"
+></app-history-chart>
+
+<app-state-tree-map [data]="statesData" *ngIf="statesData"></app-state-tree-map>
+
+<app-states-data [data]="statesData" *ngIf="statesData"></app-states-data>

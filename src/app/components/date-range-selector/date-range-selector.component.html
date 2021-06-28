@@ -1,0 +1,11 @@
+<select
+  class="form-control"
+  name="date-selector"
+  id=""
+  [(ngModel)]="selectedWeekIndex"
+  (ngModelChange)="onDateSelect()"
+>
+  <option [value]="i" *ngFor="let date of dates; let i = index">
+    {{ date.label }} - {{ date.start | date }}-{{ date.end | date }}
+  </option>
+</select>

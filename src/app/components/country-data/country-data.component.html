@@ -1,0 +1,38 @@
+<div class="coutryCases m-4">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-2">
+        <div>
+          <div>Confirmed Cases</div>
+          <div>
+            {{ data.cases | indianNumber }}
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-2">
+        <div>
+          <div>Active Cases</div>
+          <div class="text-danger">
+            {{ data.active | indianNumber }}
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-2">
+        <div>
+          <div>Recovered Cases</div>
+          <div class="text-success">
+            {{ data.recovered | indianNumber }}
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-2">
+        <div>
+          <div>Tested Cases</div>
+          <div>
+            {{ data.tests | indianNumber }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

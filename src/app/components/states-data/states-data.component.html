@@ -1,0 +1,31 @@
+<div class="coutryCases m-4">
+  <div class="container-fluid">
+    <div class="row">
+      <h3>States</h3>
+      <table class="w-100 table-bordered">
+        <tr
+          style="cursor: pointer"
+          title="Click to show detail"
+          *ngFor="let state of data | keyvalue"
+        >
+          <td (click)="state.value.expanded = !state.value.expanded">
+            <div class="d-flex justify-content-between">
+              <span>
+                {{ state.key }}
+              </span>
+              <span class="ml-2">Confirmed: {{ state.value.confirmed }}</span>
+            </div>
+            <table class="w-100 table-secondary" *ngIf="state.value.expanded">
+              <tr *ngFor="let district of state.value.districtData | keyvalue">
+                <td>
+                  {{ district.key }}
+                </td>
+                <td>Confirmed: {{ district.value.confirmed }}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
